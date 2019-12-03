@@ -1,0 +1,275 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+body {
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+  padding: 5px 25px;
+  font-size: 18px;
+  margin: 0;
+  color: #444;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 32px;
+}
+
+/* La couleur du texte est transparente de base, et on la passe en noir avec le :hover ! */
+#texteCache
+{
+  color: transparent;
+  
+  transition: 5s;
+}
+
+#texteCache:hover
+{
+  color: black;
+}
+
+
+/* 
+  On crée une div de 2px sur 2px, d'une couleur qu'on voit bien (ici rouge)
+  Ensuite, avec le :hover, on lui donne une taille de 100px sur 100px
+  Enfin, grâce à la "transition: 2s", la div grandit en animation !
+*/
+
+#toutPetit
+{
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  
+  transition: 5s;
+}
+
+#toutPetit:hover
+{
+  width: 100px;
+  height: 100px;
+}
+
+
+/*
+Ici, les seules propriétés importantes sont de nouveau "left: -130px" et "position: absolute"
+*/
+
+#horsEcranSlide {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+
+  left: -130px;
+  position: absolute;
+
+  transition: 2s;
+}
+
+/* 
+Quand on passe la souris sur l'<article> qui contient la div en dehors de l'écran,
+On dit à la div en dehors de l'écran d'effectuer un translateX pour revenir à l'écran !
+*/
+
+#conteneur:hover #horsEcranSlide
+{
+  transform: translateX(400px);
+}
+
+
+
+/*
+  L'animation en keyframes me permet de créer le mouvement de cercle.
+  Si on enlève le deuxième rotate dans le "from" et le "to",
+  l'objet tourne sur lui même également.
+*/
+@keyframes cercle
+{
+  from
+  {   
+      transform: rotate(0deg)
+      translateX(100px)
+      rotate(0deg);
+  }
+  to
+  {
+    transform: rotate(360deg)
+    translateX(100px) 
+    rotate(-360deg);
+  }
+}
+
+/* 
+  Pour pouvoir faire l'animation de cercle,
+  il faut que la div tournante soit dans un conteneur quelconque
+*/
+#cercleConteneur
+{
+  height: 150px;
+}
+
+/* 
+  Et enfin, voici la mise en forme de la div tournante.
+  Les seules propriétés IMPORTANTES sont "position: absolute" et "left: 150px" !
+  Et bien sûr l'animation de cercle ;)
+*/
+#cercle
+{
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  color: transparent;
+  font-size: 30px;
+  
+  left: 150px;
+  position: absolute;
+  
+  animation: cercle 4s linear infinite;
+}
+
+/* Quand on hover la div qui tourne, on passe le texte en noir ;) */
+#cercle:hover
+{
+  color: black;
+}
+
+
+
+/*
+  Ici, pour créer une animation de texte sur une image,
+  il faut en réalité avoir DEUX div :
+  La première qui est un "conteneur", sur laquelle on met une image en background-image
+  La deuxième, qui contient le texte qui va apparaître sur la première.
+*/
+#imageConteneur
+{
+  height: 150px;
+  width:150px;
+  
+  background-image: url("html.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*
+  Du coup, on dit tout simplement à notre deuxième div que son texte
+  et sa couleur de fond sont transparents en temps normal.
+  Il faut que la taille de cette div soit de 1px, car on veut la faire grandir avec l'animation !
+  On la place également en flex pour centrer le texte.
+*/
+#overlay {
+  width: inherit;
+  height: 1px;
+  color: transparent;
+  background-color: transparent;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transition: 2s;
+}
+
+/*
+  Enfin, quand on va passer la souris sur l'imageConteneur,
+  on va déclencher l'animation sur l'overlay.
+  
+  On augmente sa taille en lui disant de prendre celle de son parent
+  (elle va hériter de la taille de la div d'au dessus).
+  
+  Et on donne également une background-color en rgba pour la transparence !
+  RGBA = Red Green Blue Alpha (et Alpha gère la transparence) :)
+*/
+#imageConteneur:hover #overlay
+{
+  height: inherit;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/*
+  Pour un texte qui devient flou, on lui donne une couleur noire de base
+*/
+
+#texteFlou {
+  color: black;
+  transition: 1s;
+}
+
+/*
+  Et lorsque l'on passe la souris dessus, on rend le texte transparent,
+  et pour qu'on voie quand même le texte flou, on lui applique une
+  text-shadow !
+*/
+#texteFlou:hover
+{
+  color: transparent;
+  text-shadow: 0 0 3px black;
+}
+
+
+
+/*
+  Pour le texte qui suinte, le code n'est pas très propre,
+  aussi je vous demanderais de bien tout écrire pour que ça soit à peu près lisible !
+
+  On donne tout simplement un aspect au texte (ici je lui donne une couleur et une taille)
+*/
+#texteQuiSuinte
+{
+  color: black;
+  font-size: 50px;
+  transition: 2s;
+}
+
+/*
+  Et pour l'effet avec plein de couleur, on applique tout simplement tout plein
+  de text-shadow différentes, chacun espacées d'un pixel vers le bas et d'une couleur différente ;)
+*/
+#texteQuiSuinte:hover 
+{
+  text-shadow:
+    0px 4px 1px #300000,
+    0px 5px 1px #400000,
+    0px 6px 1px #500000,
+    0px 7px 1px #600000,
+    0px 8px 1px #700000,
+    0px 9px 1px #800000,
+    0px 10px 1px #900000,
+    0px 11px 1px #A00000,
+    0px 12px 1px #B00000,
+    0px 13px 1px #C00000,
+    0px 14px 1px #D00000,
+    0px 15px 1px #E00000,
+    0px 16px 1px #F00000,
+    0px 17px 1px #FA0000,
+    0px 18px 1px #FB0000,
+    0px 19px 1px #FC0000,
+    0px 20px 1px #FD0000,
+    0px 21px 1px #FE0000,
+    0px 22px 2px #FF0000;
+}
+
+boxing{
+  display:flex;
+  background-color: aqua; 
+  
+}
+nouvelle{
+  display:flex;
+  
+  background-color: aqua;
+  
+  transition: 5s;
+}
+nouvelle:hover 6boxing{
+    transform: translate(200%);
+  
+  background-color: #ff0000;
+  color: transparent;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px black;  
+}

@@ -1,0 +1,20 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+page{  
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: aqua;
+  justify-content: center;
+}
+
+titreprincipal{
+  
+  display: flex;
+  height: 10vh;
+  width: 10vw;
+  background-color: #c400ff;
+  
+}

@@ -2,18 +2,25 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
-/* body {
-  background-color: white;
-  font-family: "Open Sans", sans-serif;
-  padding: 5px 25px;
-  font-size: 18px;
-  margin: 0;
-  color: #444;
-} */
+body {
+  margin: auto;
+  width: 500px;
+  padding: 10px;
+}
 
-#blue_plant, #red_plant, #purp_mug {
+#blue_plant {
   width: 150px;
   height: 150px;
+  transition: transform 1s .25s;
+  transform: translateX(150px);
+}
+
+#red_plant {
+  width: 150px;
+  height: 150px;
+  float: right;
+  transition: transform 1s .25s;
+  transform: translateX(-150px);
 }
 
 h1 {
@@ -30,11 +37,5 @@ h1 {
   100% {
     color: black; 
     z-index: 2;
-  }
-}
-
-@keyframes slide {
-  100% {
-    
   }
 }

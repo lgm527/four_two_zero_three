@@ -1,6 +1,5 @@
 /* Fonts from Google Fonts - more at https://fonts.google.com */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
 body {
   margin: auto;
@@ -11,31 +10,36 @@ body {
 #blue_plant {
   width: 150px;
   height: 150px;
-  transition: transform 1s .25s;
-  transform: translateX(150px);
+  transition: transform 1.25s .25s;
+  transform: translateX(300px);
 }
 
 #red_plant {
   width: 150px;
   height: 150px;
   float: right;
-  transition: transform 1s .25s;
-  transform: translateX(-150px);
+  transition: transform 1.25s .25s;
+  transform: translateX(-300px);
 }
 
 h1 {
-  color: white;
-  font-family: "Merriweather", serif;
+  font-size: 50px;
+  opacity: 0%;
+  font-family: 'Yellowtail', cursive;
   text-align: center;
-  animation: house .8s alternate infinite;
+  animation: house 2s 1s forwards;
+}
+
+h2 {
+  font-size: 50px;
+  opacity: 0%;
+  font-family: 'Yellowtail', cursive;
+  text-align: center;
+  animation: house 2s 1s forwards;
 }
 
 @keyframes house {
-  0% {
-    color: white;
-  }
   100% {
-    color: black; 
-    z-index: 2;
+    opacity: 100%;
   }
 }

@@ -11,9 +11,18 @@ body {
   color: #444;
 }
 
+#blue_plant {
+  width: 200px;
+  height: 200px;
+}
+
+#red_plant {
+  width: 200px;
+  height: 200px;
+}
+
 h1 {
   font-family: "Merriweather", serif;
-  font-size: 32px;
 }
 
 /* La couleur du texte est transparente de base, et on la passe en noir avec le :hover ! */

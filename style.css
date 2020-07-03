@@ -5,12 +5,13 @@ body {
   margin: auto;
   width: 500px;
   padding: 10px;
+  background-color: rgb(230, 222, 237);
 }
 
 #blue_plant {
   width: 150px;
   height: 150px;
-  transition: transform 1.25s .25s;
+  transition: transform 1.25s .5s;
   transform: translateX(300px);
 }
 
@@ -18,8 +19,14 @@ body {
   width: 150px;
   height: 150px;
   float: right;
-  transition: transform 1.25s .25s;
+  transition: transform 1.25s .5s;
   transform: translateX(-300px);
+}
+
+#purp_mug {
+  width: 150px;
+  height: 150px;
+  margin: auto;
 }
 
 h1 {
@@ -27,7 +34,7 @@ h1 {
   opacity: 0%;
   font-family: 'Yellowtail', cursive;
   text-align: center;
-  animation: house 2s 1s forwards;
+  animation: house 2s 1.5s forwards;
 }
 
 h2 {
@@ -35,7 +42,7 @@ h2 {
   opacity: 0%;
   font-family: 'Yellowtail', cursive;
   text-align: center;
-  animation: house 2s 1s forwards;
+  animation: house 2s 1.5s forwards;
 }
 
 @keyframes house {

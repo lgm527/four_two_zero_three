@@ -17,15 +17,24 @@
 }
 
 h1 {
-  font-color: white;
+  color: white;
   font-family: "Merriweather", serif;
   text-align: center;
-  animation: house 1s ease-in-out 2.1s alternate;
+  animation: house .8s alternate infinite;
 }
 
 @keyframes house {
-  to { 
+  0% {
+    color: white;
+  }
+  100% {
     color: black; 
     z-index: 2;
+  }
+}
+
+@keyframes slide {
+  100% {
+    
   }
 }
